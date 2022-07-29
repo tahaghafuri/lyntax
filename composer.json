@@ -1,0 +1,36 @@
+{
+  "name": "lyntax/lyntax",
+  "description": "Laravel Syntax,Short PHP Code",
+  "type": "library",
+  "require": {
+    "php": "<=5.1"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Lyntax",
+      "email": "tahaghafuri@gmail.com",
+      "homepage": "https://lyntax.ir",
+      "role": "Developer"
+    }
+  ],
+  "repositories": [
+    {
+        "type": "vcs",
+        "url": "https://github.com/lyntax/lyntax"
+    }
+  ],
+  "support": {
+        "email": "tahaghafuri@gmail.com"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "lyntax\\": "/"
+    },
+    "files": [
+      "lyntax.php"
+    ]
+  }
+}
