@@ -1,2 +1,2 @@
-# lyntax
-Laravel Syntax,Short Your Code In Laravel
+# Lyntax
+Is Developing And In Alpha Release!
