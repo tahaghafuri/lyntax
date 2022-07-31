@@ -20,10 +20,6 @@ function lyntax($type,$content=null){
     $content=str_replace('*=','echo ',$content);
     $content=str_replace('=*',';',$content);
 
-    // Var
-    $content=str_replace('%|','$',$content);
-    $content=str_replace('#|',';',$content);
-
     // OOP
     $content=str_replace('%->','$this',$content);
     $content=str_replace('%*','public $',$content);
