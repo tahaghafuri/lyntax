@@ -10,7 +10,7 @@ function lyntax($type,$content=null){
     }
 
     // Function
-    $content=str_replace('func','function',$content);
+    $content=str_replace('func->','function',$content);
     $content=str_replace('pfunc','public function',$content);
     $content=str_replace('funcp','private function',$content);
     $content=str_replace('*|','return',$content);
