@@ -14,11 +14,9 @@ function lyntax($type,$content=null){
     $content=str_replace('pfunc','public function',$content);
     $content=str_replace('funcp','private function',$content);
     $content=str_replace('*|','return',$content);
-    $content=str_replace('|*',';',$content);
 
     // Echo
     $content=str_replace('*=','echo ',$content);
-    $content=str_replace('=*',';',$content);
 
     // OOP
     $content=str_replace('%->','$this',$content);
