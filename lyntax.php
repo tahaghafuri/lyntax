@@ -28,6 +28,8 @@ function lyntax($type,$content=null){
     $content=str_replace('%=','define(',$content);
     $content=str_replace('=%',');',$content);
 
+    // Check Const
+    $content=str_replace('%=>','defined(',$content);
 
     return eval($content);
 }
