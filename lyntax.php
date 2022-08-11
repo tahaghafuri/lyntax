@@ -30,6 +30,10 @@ function lyntax($type,$content=null){
 
     // Check Const
     $content=str_replace('%=>','defined(',$content);
+    
+    
+    // Mysqli
+    $content=str_replace('$m=>','mysqli_',$content);
 
     return eval($content);
 }
