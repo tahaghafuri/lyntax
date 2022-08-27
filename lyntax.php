@@ -1,7 +1,6 @@
 <?php
 
 final class lyntax{
-
     publix function load($type,$content=null){
     if($type==1) {
         $content=$content;
@@ -44,3 +43,5 @@ final class lyntax{
         return file_get_contents($file.'.lyntax');
     }
 }
+
+?>
