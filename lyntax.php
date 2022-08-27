@@ -1,6 +1,8 @@
 <?php
 
-function lyntax($type,$content=null){
+final class lyntax{
+
+    publix function load($type,$content=null){
     if($type==1) {
         $content=$content;
     }elseif($type==2){
@@ -36,4 +38,9 @@ function lyntax($type,$content=null){
     $content=str_replace('$m=>','mysqli_',$content);
 
     return eval($content);
+    }
+
+    public function get($file){
+        return file_get_contents($file.'.lyntax');
+    }
 }
