@@ -1,7 +1,7 @@
 <?php
 
 final class lyntax{
-    publix function load($type,$content=null){
+    public static function load($type,$content=null){
     if($type==1) {
         $content=$content;
     }elseif($type==2){
@@ -11,51 +11,51 @@ final class lyntax{
     }
 
     // Function
-    $content=str_replace('func->','function',$content);
-    $content=str_replace('pfunc','public function',$content);
-    $content=str_replace('funcp','private function',$content);
-    $content=str_replace('*|','return',$content);
+    $content=lyntax::syntax('func->','function',$content);
+    $content=lyntax::syntax('pfunc','public function',$content);
+    $content=lyntax::syntax('funcp','private function',$content);
+    $content=lyntax::syntax('*|','return',$content);
 
     // Echo
-    $content=str_replace('*=','echo ',$content);
+    $content=lyntax::syntax('*=','echo ',$content);
 
     // OOP
-    $content=str_replace('%->','$this',$content);
-    $content=str_replace('%*','public $',$content);
-    $content=str_replace('%-','private $',$content);
-    $content=str_replace('%^','protected $',$content);
+    $content=lyntax::syntax('%->','$this',$content);
+    $content=lyntax::syntax('%*','public $',$content);
+    $content=lyntax::syntax('%-','private $',$content);
+    $content=lyntax::syntax('%^','protected $',$content);
 
     // Const
-    $content=str_replace('%=','define(',$content);
-    $content=str_replace('=%',');',$content);
+    $content=lyntax::syntax('%=','define(',$content);
+    $content=lyntax::syntax('=%',');',$content);
 
     // Check Const
-    $content=str_replace('%=>','defined(',$content);
+    $content=lyntax::syntax('%=>','defined(',$content);
     
     
     // Mysqli
-    $content=str_replace('$m=>','mysqli_',$content);
+    $content=lyntax::syntax('$m=>','mysqli_',$content);
         
     // For
-    $content=str_replace('for=>','for(',$content);
-    $content=str_replace('<=for',')',$content);
+    $content=lyntax::syntax('for=>','for(',$content);
+    $content=lyntax::syntax('<=for',')',$content);
         
     // While
-    $content=str_replace('while=>','while(',$content);
-    $content=str_replace('<=while',')',$content);
+    $content=lyntax::syntax('while=>','while(',$content);
+    $content=lyntax::syntax('<=while',')',$content);
         
     // Foreach
-    $content=str_replace('foreach=>','foreach(',$content);
-    $content=str_replace('<=foreach',')',$content);
+    $content=lyntax::syntax('foreach=>','foreach(',$content);
+    $content=lyntax::syntax('<=foreach',')',$content);
 
     return eval($content);
     }
 
-    public function get($file){
+    public static function get($file){
         return file_get_contents($file.'.lyntax');
     }
     
-    public function syntax($syntax,$php,$code){
+    public static function syntax($syntax,$php,$code){
         return str_replace($syntax,$php,$code);
     }
 }
