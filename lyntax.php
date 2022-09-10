@@ -35,6 +35,18 @@ final class lyntax{
     
     // Mysqli
     $content=str_replace('$m=>','mysqli_',$content);
+        
+    // For
+    $content=str_replace('for=>','for(',$content);
+    $content=str_replace('<=for',')',$content);
+        
+    // While
+    $content=str_replace('while=>','while(',$content);
+    $content=str_replace('<=while',')',$content);
+        
+    // Foreach
+    $content=str_replace('foreach=>','foreach(',$content);
+    $content=str_replace('<=foreach',')',$content);
 
     return eval($content);
     }
