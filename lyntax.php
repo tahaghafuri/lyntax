@@ -54,6 +54,10 @@ final class lyntax{
     public function get($file){
         return file_get_contents($file.'.lyntax');
     }
+    
+    public function syntax($syntax,$php,$code){
+        return str_replace($syntax,$php,$code);
+    }
 }
 
 ?>
