@@ -1,7 +1,5 @@
 # Lyntax
-Is Developing And In Alpha Release!
+Is Developing And In Beta Release!
 ```
 composer require lyntax/lyntax
 ```
-
-This Package Is Outdated!
