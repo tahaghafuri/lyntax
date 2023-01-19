@@ -3,7 +3,7 @@
   "description": "Laravel Syntax,Short PHP Code",
   "type": "library",
   "require": {
-    "php": "<=5.1"
+    "php": "*"
   },
   "license": "MIT",
   "authors": [
