@@ -36,6 +36,9 @@ final class lyntax{
     // Mysqli
     $content=lyntax::syntax('$m=>','mysqli_',$content);
         
+    // Const
+    $content=lyntax::syntax('$ ','const ',$content);
+        
     // For
     $content=lyntax::syntax('for=>','for(',$content);
     $content=lyntax::syntax('<=for',')',$content);
