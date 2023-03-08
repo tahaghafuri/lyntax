@@ -1,6 +1,10 @@
 <?php
 
 final class lyntax{
+
+	public static function info($get){
+		return self::load(2,$get);
+	}
     
     public static function load($type,$content=null){
         if($type==1) {
@@ -12,45 +16,44 @@ final class lyntax{
         }
 
         // Function
-        $content=lyntax::syntax('func->','function',$content);
-        $content=lyntax::syntax('pfunc','public function',$content);
-        $content=lyntax::syntax('funcp','private function',$content);
-        $content=lyntax::syntax('*|','return',$content);
+        $content=self::syntax('func->','function',$content);
+        $content=self::syntax('pfunc','public function',$content);
+        $content=self::syntax('funcp','private function',$content);
+        $content=self::syntax('*|','return',$content);
 
         // Echo
-        $content=lyntax::syntax('*=','echo ',$content);
+        $content=self::syntax('*=','echo ',$content);
 
         // OOP
-        $content=lyntax::syntax('%->','$this',$content);
-        $content=lyntax::syntax('%*','public $',$content);
-        $content=lyntax::syntax('%-','private $',$content);
-        $content=lyntax::syntax('%^','protected $',$content);
+        $content=self::syntax('%->','$this',$content);
+        $content=self::syntax('%*','public $',$content);
+        $content=self::syntax('%-','private $',$content);
+        $content=self::syntax('%^','protected $',$content);
 
         // Const
-        $content=lyntax::syntax('%=','define(',$content);
-        $content=lyntax::syntax('=%',');',$content);
+        $content=self::syntax('%=','define(',$content);
+        $content=self::syntax('=%',');',$content);
 
         // Check Const
-        $content=lyntax::syntax('%=>','defined(',$content);
-
+        $content=self::syntax('%=>','defined(',$content);
 
         // Mysqli
-        $content=lyntax::syntax('$m=>','mysqli_',$content);
+        $content=self::syntax('$m=>','mysqli_',$content);
 
         // Const
-        $content=lyntax::syntax('$ ','const ',$content);
+        $content=self::yntax('$ ','const ',$content);
 
         // For
-        $content=lyntax::syntax('for=>','for(',$content);
-        $content=lyntax::syntax('<=for',')',$content);
+        $content=self::syntax('for=>','for(',$content);
+        $content=self::syntax('<=for',')',$content);
 
         // While
-        $content=lyntax::syntax('while=>','while(',$content);
-        $content=lyntax::syntax('<=while',')',$content);
+        $content=self::syntax('while=>','while(',$content);
+        $content=self::syntax('<=while',')',$content);
 
         // Foreach
-        $content=lyntax::syntax('foreach=>','foreach(',$content);
-        $content=lyntax::syntax('<=foreach',')',$content);
+        $content=self::syntax('foreach=>','foreach(',$content);
+        $content=self::syntax('<=foreach',')',$content);
 
         return eval($content);
     }
