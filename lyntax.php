@@ -3,7 +3,7 @@
 final class lyntax{
 
     public static function info($get){
-	return self::load(2,$get);
+		return self::load(2,$get);
     }
     
     public static function load($type,$content=null){
